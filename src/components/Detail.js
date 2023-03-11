@@ -300,12 +300,12 @@ const Detail = () => {
                 }}
               />
             </Grid>
-            <Grid xs={10} sx={{ border: "0px solid red" }}>
+            <Grid xs={10}>
               <Button
                 variant="contained"
                 type="submit"
                 sx={{
-                  margin: "0 50%",
+                  marginLeft: matchesMD ? "55%" : matchesSM ? "50%" : "40%",
                   width: matchesLG
                     ? "10%"
                     : matchesMD

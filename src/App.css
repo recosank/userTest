@@ -32,8 +32,16 @@ body {
 }
 @media screen and (max-width: 450px) {
   .userCard {
+    transform-origin: none;
+    transition: none;
+
     animation: unset;
     margin-top: 10vh;
     transform: perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  .userCard:hover {
+    animation: unset;
+    margin-top: 10vh;
+    transform: none;
   }
 }
