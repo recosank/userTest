@@ -31,7 +31,7 @@ export const updateUser = (id, data) =>
       }
     )
     .then(async (res) => {
-      return res.data;
+      return res;
     })
     .catch((err) => console.log(err));
 
@@ -53,7 +53,7 @@ export const addUser = (data) =>
       }
     )
     .then(async (res) => {
-      return res.data;
+      return res;
     })
     .catch((err) => console.log(err));
 

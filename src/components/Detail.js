@@ -15,6 +15,9 @@ import {
 } from "../utils";
 import AppLayout from "./layout/AppLayout";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
@@ -99,12 +102,30 @@ const Detail = () => {
   const handleUpdate = async (e) => {
     e.preventDefault();
     const data = await updateUser(userID, userInfo);
+    if (data.status == 200) {
+      toast.success("User Updated Successfuly !", {
+        position: "top-right",
+      });
+    } else {
+      toast.error("Something Went Wrong !", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+    }
     navigate("/");
   };
 
   const handleNewUser = async (e) => {
     e.preventDefault();
     const data = await addUser(userInfo);
+    if (data.status == 200) {
+      toast.success("User Added Successfuly !", {
+        position: "top-right",
+      });
+    } else {
+      toast.error("Something Went Wrong !", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+    }
     navigate("/");
   };
 
@@ -129,6 +150,7 @@ const Detail = () => {
   return (
     <div className="App" style={{ minHeight: "100vh" }}>
       <AppLayout crumbData={update ? crumbDataUpdate : crumbDataAddUser}>
+        <ToastContainer />
         <Box
           component="form"
           autoComplete="off"
