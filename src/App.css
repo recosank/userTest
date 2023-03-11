@@ -1,38 +1,39 @@
+body {
+  background-color: #f4decb;
+}
 .App {
-  text-align: center;
+  background-color: #f4decb;
+  min-height: "100vh";
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.userCard {
+  transform-origin: center center 0px;
+  transition: all 0.5s ease-out;
+  animation-name: animate;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  transform: perspective(1000px) rotateX(35deg) rotateY(4deg) rotateZ(-30deg);
+  z-index: 1;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.userCard:hover {
+  animation: unset;
+  margin-top: 18vh;
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+}
+@keyframes animate {
+  0% {
+    margin-top: 20vh;
+  }
+  50% {
+    margin-top: 18vh;
+  }
+  100% {
+    margin-top: 20vh;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media screen and (max-width: 450px) {
+  .userCard {
+    animation: unset;
+    margin-top: 10vh;
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
   }
 }
